@@ -1,0 +1,325 @@
+local DarkraiX = loadstring(game:HttpGet("https://raw.githubusercontent.com/11451466666/emm/main/21868.txt", true))()
+
+local Library = DarkraiX:Window("shark","script","👀",Enum.KeyCode.RightControl);
+
+Tab1 = Library:Tab("主要")
+
+Tab1:Seperator("当前注入器👀："..identifyexecutor())
+
+Tab1:Slider("speed",1,100,25,function(value)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+    end)
+
+Tab1:Slider("jump",1,100,25,function(value)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+    end)
+    
+Tab1:Slider("gravity",1,100,25,function(value)
+        game.Workspace.Gravity = Value
+    end)
+    
+Tab1:Dropdown("↑翻译",{"速度","跳跃","重力"},function(value)
+end)
+
+emm = Library:Tab("人物")
+
+emm:Button("变成蛇",function()
+    loadstring(game:HttpGet(('https://pastefy.ga/tWBTcE4R/raw'),true))()
+end)
+
+emm:Button("踏空行走",function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/Float'))()
+end)
+
+emm:Button("甩飞别人",function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/GnvPVBEi"))()
+end)
+
+Tab1:Toggle("穿墙",false,function(value)
+ Noclip = Value
+    Stepped = game.RunService.Stepped:Connect(function()
+        if Noclip then
+            for a, b in pairs(game.Workspace:GetChildren()) do
+                if b.Name == game.Players.LocalPlayer.Name then
+                    for i, v in pairs(game.Workspace[game.Players.LocalPlayer.Name]:GetChildren()) do
+                        if v:IsA("BasePart") then
+                            v.CanCollide = false
+                        end
+                    end
+                end
+            end
+        else
+            Stepped:Disconnect()
+        end
+    end)
+end)
+
+Tab1:Toggle("踏空", false, function(Value)
+    Jump = Value
+    game.UserInputService.JumpRequest:Connect(function()
+        if Jump then
+            game.Players.LocalPlayer.Character.Humanoid:ChangeState("Jumping")
+        end
+    end)
+end)
+
+lol= Library:Tab("通用")
+
+lol:Button("光影",function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/MZEEN2424/Graphics/main/Graphics.xml"))()
+end)
+
+lol:Button("飞车",function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/MHE1cbWF"))()
+end)
+
+lol:Button("转起来",function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/r97d7dS0', true))()
+end)
+
+lol:Button("电脑键盘",function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
+end)
+
+lol:Button("鼠标",function()
+    loadstring(game:HttpGet(('https://pastefy.ga/V75mqzaz/raw'),true))()
+end)
+
+lol:Button("伪名说话",function()
+    loadstring(game:HttpGet(('https://pastefy.ga/zCFEwaYq/raw'),true))()
+end)
+
+lol:Button("飞行",function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/U27yQRxS"))()
+end)
+
+lol:Button("工具",function()
+    loadstring(game:HttpGet("https://cdn.wearedevs.net/scripts/BTools.txt"))()
+end)
+
+lol:Button("最强透视", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/uw2P2fbY"))()
+end)
+fe= Library:Tab("Tool")
+
+fe:Button("btool",function()
+    loadstring(game:HttpGet("https://cdn.wearedevs.net/scripts/BTools.txt"))()
+end)
+
+fe:Button("控制",function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/XR4sGcgJ"))()
+end)
+
+fe:Button("位置获取👀",function()
+    loadstring(game:HttpGet("https://gist.githubusercontent.com/NortherScripts/8d954211b286d051c416cc5f88b3dc5f/raw/"))()
+end)
+
+fe:Button("按键（任意选择按键", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/KeyBinds/main/KeyBinds-Source.lua"))()
+end)
+
+fe:Button("C00l", function()
+    loadstring(game:GetObjects("rbxassetid://8127297852")[1].Source)()
+end)
+
+fe:Toggle("反挂机", false, function(Value)
+    print("Anti Afk On")
+		local vu = game:GetService("VirtualUser")
+		game:GetService("Players").LocalPlayer.Idled:connect(function()
+		   vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+		   wait(1)
+		   vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+		end)
+end)
+
+fe:Toggle("ping", false, function(Value)
+    repeat wait() until game:IsLoaded() wait(2)
+local ScreenGui = Instance.new("ScreenGui")
+local Ping = Instance.new("TextLabel")
+
+ScreenGui.Parent = game.CoreGui
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Ping.Name = "Ping"
+Ping.Parent = ScreenGui
+Ping.BackgroundColor3 = Color3.fromRGB(0, 0, 255)
+Ping.BackgroundTransparency = 1.000
+Ping.BorderColor3 = Color3.fromRGB(0, 0, 128)
+Ping.Position = UDim2.new(0.700000048, 0, 0, 0)
+Ping.Size = UDim2.new(0, 125, 0, 25)
+Ping.Font = Enum.Font.SourceSans
+Ping.TextColor3 = Color3.fromRGB(0, 0, 255)
+Ping.TextScaled = true
+Ping.TextSize = 14.000
+Ping.TextWrapped = true
+
+local script = Instance.new('LocalScript', Ping)
+local RunService = game:GetService("RunService")
+RunService.RenderStepped:Connect(function(ping) 
+script.Parent.Text = ("Ping: " ..game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString(math.round(2/ping))) -- your ping
+end)
+end)
+
+fe:Toggle("fps", false, function(Value)
+    repeat wait() until game:IsLoaded() wait(2)
+local ScreenGui = Instance.new("ScreenGui")
+local Fps = Instance.new("TextLabel")
+
+ScreenGui.Parent = game.CoreGui
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Fps.Name = "Fps"
+Fps.Parent = ScreenGui
+Fps.BackgroundColor3 = Color3.fromRGB(0, 0, 128)
+Fps.BackgroundTransparency = 1.000
+Fps.Position = UDim2.new(0.786138654, 0, 0, 0)
+Fps.Size = UDim2.new(0, 125, 0, 25)
+Fps.Font = Enum.Font.SourceSans
+Fps.TextColor3 = Color3.fromRGB(0, 0, 255)
+Fps.TextScaled = true
+Fps.TextSize = 14.000
+Fps.TextWrapped = true
+
+local script = Instance.new('LocalScript', Fps)
+local RunService = game:GetService("RunService")
+RunService.RenderStepped:Connect(function(frame)
+script.Parent.Text = ("FPS: "..math.round(1/frame)) 
+end)
+end)
+
+zao= Library:Tab("造船寻宝")
+
+zao:Button("自动刷金条",function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/Lyy77rnr",true))()
+end)
+
+Teleport = Library:Tab("监狱人生传送")
+
+Teleport:Button("军械库", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(835.2199096679688, 99.99000549316406, 2267.0546875)
+end)
+
+Teleport:Button("仓库", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-943.4600219726562, 94.1287612915039, 2063.6298828125)
+end)
+
+Teleport:Button("监狱", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(918.77001953125, 99.98998260498047, 2379.070068359375)
+end)
+
+Teleport:Button("院子", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(779.8699951171875, 97.99992370605469, 2458.929931640625)
+end)
+
+Teleport:Button("屋顶", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(907.4030151367188, 138.5979766845703, 2309.357666015625)
+end)
+
+Kill = Library:Tab("杀戮")
+
+Kill:Textbox("用户名", "", true, function(Value)
+    Name = Value
+end)
+
+Kill:Toggle("循环杀戮", false, function(Value)
+    Loop = Value
+    while Loop do
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[Name].Character.HumanoidRootPart.CFrame
+        game.ReplicatedStorage.meleeEvent:FireServer(game.Players[Name])
+        wait()
+    end
+end)
+
+Kill:Toggle("杀戮光环", false, function(Value)
+    Aura = Value
+    while Aura do
+        wait()
+        for i, e in pairs(game.Players:GetChildren()) do
+            if e ~= game.Players.LocalPlayer then
+                game.ReplicatedStorage.meleeEvent:FireServer(e)
+            end
+        end
+    end
+end)
+
+Kill:Toggle("杀所有人", false, function(Value)
+    All = Value
+    while All do
+        for i, e in pairs(game.Players:GetChildren()) do
+            if e ~= game.Players.LocalPlayer then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = e.Character.HumanoidRootPart.CFrame
+                game.ReplicatedStorage.meleeEvent:FireServer(e)
+                game.Players.LocalPlayer.Character.Humanoid:ChangeState("Jumping")
+                wait()
+            end
+        end
+    end
+end)
+
+Other = Library:Tab("其他")
+
+Other:Button("跟踪玩家", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/F9PNLcXk"))()
+end)
+
+Other:Button("建筑工具", function()
+    Copy = Instance.new("HopperBin")
+    Copy.Name = "Copy"
+    Copy.BinType = 3
+    Copy.Parent = game.Players.LocalPlayer.Backpack
+    Delete = Instance.new("HopperBin")
+    Delete.Name = "Delete"
+    Delete.BinType = 4
+    Delete.Parent = game.Players.LocalPlayer.Backpack
+end)
+
+Other:Button("点击传送", function()
+    Tool = Instance.new("Tool")
+    Tool.Name = "点击传送"
+    Tool.RequiresHandle = false
+    Tool.Parent = game.Players.LocalPlayer.Backpack
+    Tool.Activated:Connect(function()
+        Mouse = game.Players.LocalPlayer:GetMouse().Hit+Vector3.new(0, 2.5, 0)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Mouse.X, Mouse.Y, Mouse.Z)
+    end)
+end)
+
+Other:Toggle("夜视", false, function(Value)
+    if Value then
+        game.Lighting.Ambient = Color3.new(1, 1, 1)
+    else
+        game.Lighting.Ambient = Color3.new(0, 0, 0)
+    end
+end)
+
+qaq= Library:Tab("凹凸世界：自由丛林🌲")
+
+qaq:Button("无限获取裁判球", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/KissxTay/caramelldansen/main/chinese%20event", true))()
+end)
+
+jjj= Library:Tab("旗帜大战")
+
+jjj:Button("无限弹药", function()
+    loadstring(game:HttpGet("https://www.textbin.online/paste.php?raw&id=214", true))()
+end)
+
+bz= Library:Tab("巴掌模拟器")
+
+bz:Button("脚本", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/cheesynob39/R2O/main/LOADSTRING.lua"))()
+end)
+
+chuan= Library:Tab("传奇")
+
+chuan:Button("忍者", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/1201for/V.G-Hub/main/V.Ghub'))()
+end)
+
+chuan:Button("极速", function()
+    loadstring(Game:HttpGet("https://pastebin.com/raw/0A4J7V8M"))()
+end)
+
+chuan:Button("力量", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Vice1337/free-scripts-for-roblox/main/Muscle-Legends-3623096087"))()
+end)
